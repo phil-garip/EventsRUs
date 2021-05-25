@@ -6,9 +6,13 @@ User.hasMany(Event, {
   foreignKey: 'user_id',
 });
 
-Event.belongsTo(Location, {
-  foreignKey: 'location_id',
+Event.hasOne(Location, {
+    foreignKey: 'location_id',
 });
+
+// Location.belongsToMany(Event, {
+//   foreignKey: 'event_id',
+// });
 
 
 
