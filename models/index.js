@@ -12,4 +12,4 @@ Event.belongsTo(Location, {
 
 
 
-module.exports = { User, Gallery, Painting };
+module.exports = { User, Event, Location };
