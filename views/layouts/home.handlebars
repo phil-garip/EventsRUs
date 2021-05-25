@@ -1,0 +1,19 @@
+<nav>
+    <a href="/">Home</a>
+    <!-- If the user is logged in, show a logout button -->
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <!-- Otherwise, show a link to login -->
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+  <aside>
+     <a href="/">Account</a> 
+     <a href="/">Profile</a>
+     <a href="/">Shared Events</a>
+     <a href="/">Make New Event</a>
+  </aside>
+  <body>
+      <h1>Featured Events For the Week</h1>
+  </body>
