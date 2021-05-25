@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventsRUs</title>
+  <link rel="stylesheet" type="text/css" href="/piblic/style.css">
+  {{!-- CSS --}}
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to EventsRUs</h1>
+  </header>
+  <div class="home">
+      {{{body}}}
+    </div>
+  
+ 
+    
+  <!-- If the user is logged in, load the JS script for when they logout -->
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
