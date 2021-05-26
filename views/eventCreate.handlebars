@@ -1,23 +1,18 @@
 <main class="form-signin text-center">
     <h3 class="h3">Create Event</h3>
     <form class="card-body" id="add-post-form">
-        <div class="form-floating">
-            <label for="post-title" class="form-label" ></label>
-    
-            <input type="text" id="post-title" name="post-title" class="form-input w-100" autofocus="true" placeholder="Title"/>
+       <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Tell us About Your Event</label>
         </div>
-
-        <div class="form-floating mb-3">
-            {{!-- Content of Post, value used in JavaScript --}}
-            <label class="form-label" for="content" ></label>
-            <textarea id="content" name="content" class="form-input w-100" aria-label="With textarea"
-                autofocus="true" placeholder="What's on your mind?"></textarea>
-        </div>
-
-
-        <button type="submit" class="w-100 btn btn-lg btn-info mb-3">Create</button>
+      </div>
     </form>
-    </form>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
 </main>
 
-<script src="/js/add-post.js"></script>
+<script src="/js/create-event.js"></script>
