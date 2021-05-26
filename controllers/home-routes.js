@@ -22,3 +22,14 @@ module.exports = router;
 
 //DELETE to delete events
 
+//LOGIN ROUTE
+router.get('/', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+    res.render('login');
+  });
+  
+  module.exports = router;
+  
