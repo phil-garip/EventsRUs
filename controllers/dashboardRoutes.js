@@ -5,9 +5,7 @@ const { Event, User, Location } = require('../models');
 
 
 router.get('/', (req, res) => {
-    res.send('dashboard');
+    res.render('dashboard');
 });
-
-router.get('/')
 
 module.exports = router;
