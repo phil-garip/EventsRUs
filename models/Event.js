@@ -23,20 +23,13 @@ Event.init(
       time: {
           type: DataTypes.DATE
       },
-      user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'User',
-            key: 'id',
-        },
-      },
-      location_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'Location',
-            key: 'id',
-        },
-      },
+      // location_id: {
+      //   type: DataTypes.INTEGER,
+      //   references: {
+      //       model: 'Location',
+      //       key: 'id',
+      //   },
+      // },
     }, {
         sequelize,
         timestamps: false,
