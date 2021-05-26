@@ -2,6 +2,18 @@ const sequelize = require('../config/connection');
 const router = require('express').Router();
 const { User, Event, Location } = require('../models');
 
+//LOGIN ROUTE
+router.get('/', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('login');
+});
+
+module.exports = router;
+
+
 // GET all user events
 
 // POST new events
@@ -10,14 +22,3 @@ const { User, Event, Location } = require('../models');
 
 //DELETE to delete events
 
-//LOGIN ROUTE
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
-    res.render('./partials/login');
-  });
-  
-  module.exports = router;
-  
