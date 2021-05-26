@@ -20,6 +20,9 @@ Event.init(
       description: {
           type: DataTypes.TEXT,
         },
+      time: {
+          type: DataTypes.DATE
+      },
       user_id: {
         type: DataTypes.INTEGER,
         references: {
