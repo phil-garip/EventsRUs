@@ -8,12 +8,19 @@
     <a href="/login">Login</a>
     {{/if}}
   </nav>
-  <aside>
-     <a href="/">Account</a> 
-     <a href="/">Profile</a>
-     <a href="/">Shared Events</a>
-     <a href="/">Make New Event</a>
-  </aside>
+  
   <body>
       <h1>Featured Events For the Week</h1>
+      <aside>
+     <a href="/create-profile">Account</a> 
+     <a href="/profile">Profile</a>
+     <a href="/saved-events">Saved Events</a>
+     <a href="/create-event">Make New Event</a>
+  </aside>
+      <section>
+          <h2>Event History</h2>
+    {{#each events as |event|}}
+      {{> dashboard-eventinfo event}}
+    {{/each}}
+    </section>
   </body>
