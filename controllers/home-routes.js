@@ -1,18 +1,31 @@
+const sequelize = require('../config/connection');
 const router = require('express').Router();
 const { User, Event, Location } = require('../models');
+
+//LOGIN ROUTE
+router.get('/', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('login');
+});
+
+module.exports = router;
+
 
 // GET all user events
 router.get('/events', async (req, res) => {
   try {
     const eventData = await Event.findAll({
-      include: [
-        {
-          model: Location,
-          // attributes: ['name'],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Location,
+      //     // attributes: ['name'],
+      //   },
+      // ],
     });
-
+    console.log(eventData)
     const events = eventData.map((event) =>
       event.get({ plain: true })
     );
