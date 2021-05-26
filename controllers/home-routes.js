@@ -10,7 +10,7 @@ const { User, Event, Location } = require('../models');
 //DELETE to delete events
 
 //LOGIN ROUTE
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
       return;
