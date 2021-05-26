@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { eq } = require('sequelize/types/lib/operators');
 const { Event } = require('../../models');
 
 router.post('/', async (req, res) => {
@@ -20,4 +19,6 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
 
