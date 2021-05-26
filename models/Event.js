@@ -11,20 +11,29 @@ Event.init(
         primaryKey: true,
         autoIncrement: true,
         },
-    //   user_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'User',
-    //         key: 'id',
-    //     },
-    //   },
-    //   location_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'Location',
-    //         key: 'id',
-    //     },
-    //   },
+
+      title: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+
+      description: {
+          type: DataTypes.TEXT,
+        },
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'User',
+            key: 'id',
+        },
+      },
+      location_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'Location',
+            key: 'id',
+        },
+      },
     }, {
         sequelize,
         timestamps: false,
