@@ -26,10 +26,5 @@ const loginFormHandler = async (event) => {
 
 document.querySelector('#create-event').addEventListener('submit', loginFormHandler);
 
-// date picker
-// document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('.datepicker');
-//     var instances = M.Datepicker.init(elems, options);
-//   });
 
   
