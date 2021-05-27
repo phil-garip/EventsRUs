@@ -8,20 +8,23 @@
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-</head>
+   <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400&family=Gruppo&display=swap" rel="stylesheet">
+
+
 
 <body>
   <nav class = "deep-purple ">
     <div class="nav-wrapper">
-    <a href="/dashboard">Home</a>
+    <a href="/dashboard">Home |</a>
     <!-- If the user is logged in, show a logout button -->
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    <button id="logout" class="btn-no-style">Logout |</button>
     {{else}}
     <!-- Otherwise, show a link to login -->
-    <a href="/">Login</a>
+    <a href="/">Login |</a>
    
-     <a href="/profile">Profile</a>
+     <a href="/profile">Profile |</a>
      <a href="/eventCreate">New Event</a>
     {{/if}}
     
