@@ -23,14 +23,18 @@ Event.init(
       date: {
           type: DataTypes.DATE
       },
-      location_id: {
+      location: {
+        type: DataTypes.STRING
+      },
+      user_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'Location',
-            key: 'id',
-        },
-      },
-    }, {
+          model: 'User',
+          key: 'id',
+        }
+      }
+    },
+      {
         sequelize,
         timestamps: false,
         freezeTableName: true,

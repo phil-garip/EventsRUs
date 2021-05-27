@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Event } = require('../../models');
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -23,7 +23,33 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login
+router.get('/:id', async (req, res) => {
+  User.findOne({
+    attributes: { exclude: ['password', 'username', 'email'] },
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+        model: Event,
+        attributes: [
+          'title',
+          'description',
+          'date'
+        ]
+      },
+    ]
+  })
+  .then(dbUserData => {
+    if(!dbUserData) {
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+    res.json(dbUserData);
+  })
+});
+
+// Login // /api/users/login
 router.post('/login', async (req, res) => {
   console.log('logging in')
   try {
@@ -33,7 +59,8 @@ router.post('/login', async (req, res) => {
       },
     });
     console.log(dbUserData);
-
+    const user = dbUserData.get({ plain: true });
+    console.log(user);
     if (!dbUserData) {
       res
         .status(400)
@@ -52,6 +79,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userId = dbUserData.dataValues.id;
 
       res
         .status(200)
@@ -63,7 +91,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Logout
+// Logout // /api/logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

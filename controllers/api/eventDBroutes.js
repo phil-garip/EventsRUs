@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
         return res.status(500)
     }
 });
-//GET EVENT BY ID
 
 
 //CREATE NEW EVENT
@@ -29,6 +28,7 @@ router.post('/', async (req, res) => {
             title: req.body.title,
             description: req.body.description,
             date: req.body.date,
+            user_id: req.session.userId
         });
         console.log(dbEventData);
 

@@ -8,7 +8,6 @@ const loginFormHandler = async (event) => {
     // const location = document.querySelector('#event-location').value.trim();
     // const time = document.querySelector('#event-time').value.trim();
     // const age = document.querySelector('.with-gap').value.trim();
-  
     // if (email && title && location && time && age) {
       const response = await fetch('/api/events', {
         method: 'POST',
