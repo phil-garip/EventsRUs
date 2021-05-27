@@ -4,7 +4,7 @@ const eventData = [
     {
         title: 'Sardines Open Mic',
         description: 'a supportive open mic for newcommers and oldfoks alike!',
-        date: '2021-10-03'
+        date: '2021-10-03',
     },
     {
         title: 'Tuna Boy Open Mic',

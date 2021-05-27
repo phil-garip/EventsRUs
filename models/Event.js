@@ -29,6 +29,13 @@ Event.init(
             model: 'Location',
             key: 'id',
         },
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'User',
+          key: 'id',
+        }
+      }
       },
     }, {
         sequelize,
