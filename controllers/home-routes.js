@@ -29,10 +29,25 @@ router.get('/saved-events', (req, res) => {
 
 //GET PROFILE PAGE
 router.get('/profile', (req, res) => {
-  res.render('profile');
+  Event.findAll({
+          include: [
+            { attributes: ['date', 'title', 'location'] },
+              {
+                  model: User,
+                  attributes: ['username']
+              }
+          ]
+      })
+      .then(dbEventData => {
+          const events = dbEventData.map(event => event.get({ plain: true }));
+          res.render('profile', { events });
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
 });
 
-//GET CREATE PROFILE PAGE
 
 module.exports = router;
   
