@@ -28,3 +28,9 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+//GET LOCATION BY ID
+
+
+
+module.exports = router;
