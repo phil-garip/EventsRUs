@@ -4,6 +4,9 @@ const loginFormHandler = async (event) => {
 
     const title = document.querySelector('#event-title').value.trim();
     console.log(title);
+    const description = document.querySelector('#description').value.trim();
+    const date = document.querySelector('#date');
+    const location = document.querySelector('#location');
     // const email = document.querySelector('#email').value.trim();
     // const location = document.querySelector('#event-location').value.trim();
     // const time = document.querySelector('#event-time').value.trim();
@@ -11,7 +14,7 @@ const loginFormHandler = async (event) => {
     // if (email && title && location && time && age) {
       const response = await fetch('/api/events', {
         method: 'POST',
-        body: JSON.stringify({ title }),
+        body: JSON.stringify({ title, description, date, location }),
         headers: { 'Content-Type': 'application/json' },
       });
   
