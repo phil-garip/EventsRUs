@@ -28,8 +28,9 @@ router.post('/', async (req, res) => {
         const dbEventData = await Event.create({
             title: req.body.title,
             description: req.body.description,
-            time: req.body.time,
+            date: req.body.date,
         });
+        console.log(dbEventData);
 
         req.session.save(() => {
             req.session.loggedIn = true;
