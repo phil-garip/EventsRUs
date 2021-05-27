@@ -13,7 +13,7 @@ router.get('/profileCreate', (req,res) => {
   });
 
 //GET CREATE EVENT PAGE
-router.get('/create-event', (req, res) => {
+router.get('/eventCreate', (req, res) => {
   res.render('eventCreate');
 });
 
@@ -31,6 +31,8 @@ router.get('/saved-events', (req, res) => {
 router.get('/profile', (req, res) => {
   res.render('profile');
 });
+
+//GET CREATE PROFILE PAGE
 
 module.exports = router;
   
