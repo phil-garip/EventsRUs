@@ -10,7 +10,7 @@ const loginFormHandler = async (event) => {
     const birthday = document.querySelector('#birthday').value.trim();
   
     if (email && password && firstName && lastName && username && birthday) {
-      const response = await fetch('/api/users/newProfile', {
+      const response = await fetch('/api/users/', {
         method: 'POST',
         body: JSON.stringify({ email, password, firstName, lastName, username, birthday }),
         headers: { 'Content-Type': 'application/json' },
