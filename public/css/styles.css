@@ -142,3 +142,24 @@ img {
     align-content: flex-start;
     align-items: center;
   } */
+
+  * {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-family: 'Darker Grotesque', sans-serif;
+      font-family: 'Gruppo', cursive;
+      
+  }
+
+  nav {
+      padding-left: 15px;
+      margin-right: 15px;
+  }
+
+  #nav a {
+    margin-right: 10px; 
+    font-size: large;
+  }
+
+  /* #ede7f6 deep-purple lighten-5 */
+  /* #263238 blue-grey darken-4 */
