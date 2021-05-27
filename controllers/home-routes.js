@@ -27,6 +27,11 @@ router.get('/saved-events', (req, res) => {
   res.render('myEvents');
 });
 
+//GET PROFILE PAGE
+router.get('/profile', (req, res) => {
+  res.render('profile');
+});
+
 
 
 
