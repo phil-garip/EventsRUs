@@ -1,29 +1,16 @@
-<nav>
-    <a href="/dashboard">Home</a>
-    <!-- If the user is logged in, show a logout button -->
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <!-- Otherwise, show a link to login -->
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  
-  <body>
-      <h1>Featured Events For the Week</h1>
-      {{!-- Partial for featured events --}}
-      
-      <aside>
-     <a href="/create-profile">Account</a> 
-     <a href="/profile">Profile</a>
-     <a href="/saved-events">Saved Events</a>
-     <a href="/create-event">Make New Event</a>
-  </aside>
+
+
+
+  <div>
+    {{> dashboard-card}}
+  </div>
+
+    <h2>Event History</h2>
       <section>
-          <h2>Event History</h2>
+
     {{#each events as |event|}}
-      {{> dashboard-eventinfo event}}
+      {{> event-info event}}
     {{/each}}
     </section>
-  </body>
+  
   
