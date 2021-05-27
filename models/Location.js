@@ -14,14 +14,14 @@ Location.init(
       name: {
           type: DataTypes.STRING,
           allowNull: false,
-      }
-    //   user_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'User',
-    //         key: 'id',
-    //     },
-    //   },
+      },
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'User',
+            key: 'id',
+        },
+      },
     //   event_id: {
     //     type: DataTypes.INTEGER,
     //     references: {
