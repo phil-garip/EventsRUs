@@ -13,7 +13,7 @@ router.get('/profileCreate', (req,res) => {
   });
 
 //GET CREATE EVENT PAGE
-router.get('/create-event', (req, res) => {
+router.get('/eventCreate', (req, res) => {
   res.render('eventCreate');
 });
 
@@ -24,15 +24,15 @@ router.get('/dashboard', (req, res) => {
 
 //GET SAVED EVENTS PAGE
 router.get('/saved-events', (req, res) => {
-  res.render('myEvents');
+  res.render('my-events');
 });
 
+//GET PROFILE PAGE
+router.get('/profile', (req, res) => {
+  res.render('profile');
+});
 
-
-
-
-
-  
+//GET CREATE PROFILE PAGE
 
 module.exports = router;
   
