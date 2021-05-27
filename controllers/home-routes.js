@@ -38,9 +38,9 @@ router.get('/profile', (req, res) => {
               }
           ]
       })
-      .then(dbPostData => {
-          const events = dbPostData.map(post => post.get({ plain: true }));
-          res.render('profile', { events, loggedIn: req.session.loggedIn });
+      .then(dbEventData => {
+          const events = dbEventData.map(event => event.get({ plain: true }));
+          res.render('profile', { events });
       })
       .catch(err => {
           console.log(err);
