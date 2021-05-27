@@ -20,7 +20,7 @@ Event.init(
       description: {
           type: DataTypes.TEXT,
         },
-      time: {
+      date: {
           type: DataTypes.DATE
       },
       location_id: {

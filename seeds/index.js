@@ -1,13 +1,16 @@
 const sequelize = require('../config/connection');
-const seedEvent = require('./eventData');
-const seedUser = require('./userData');
+const seedEvents = require('./eventSeeds');
+const seedUsers = require('./userSeeds');
+const seedLocations = require('./locationSeeds');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedEvent();
+  await seedEvents();
 
-  await seedUser();
+  await seedUsers();
+
+  await seedLocations();
 
   process.exit(0);
 };
