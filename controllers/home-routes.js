@@ -24,7 +24,7 @@ router.get('/dashboard', (req, res) => {
 
 //GET SAVED EVENTS PAGE
 router.get('/saved-events', (req, res) => {
-  res.render('myEvents');
+  res.render('my-events');
 });
 
 //GET PROFILE PAGE
