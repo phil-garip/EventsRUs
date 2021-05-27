@@ -9,7 +9,7 @@ const loginFormHandler = async (event) => {
     if (email && password && firstName && lastName && username && birthday) {
       const response = await fetch('/api/users/', {
         method: 'POST',
-        body: JSON.stringify({ email, password, firstName, lastName, username, birthday }),
+        body: JSON.stringify({ email, password, username }),
         headers: { 'Content-Type': 'application/json' },
       });
   
