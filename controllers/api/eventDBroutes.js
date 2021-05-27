@@ -4,13 +4,6 @@ const { Event } = require('../../models');
 
 //GET ALL EVENTS
 router.get('/', async (req, res) => {
-    Event.findAll()
-      .then(eventData => {
-          res.json(eventData);
-      })
-      .catch(err => {
-          res.json(err)
-      })
     try {
         const eventData = await Event.findAll();
         return res.json(eventData);
