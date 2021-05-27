@@ -10,9 +10,9 @@ const loginFormHandler = async (event) => {
     const birthday = document.querySelector('#birthday').value.trim();
   
     if (email && password && firstName && lastName && username && birthday) {
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/api/users/newProfile', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, firstName, lastName, username, birthday }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -25,4 +25,4 @@ const loginFormHandler = async (event) => {
   };
   
 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('#newProfile-form').addEventListener('submit', loginFormHandler);
