@@ -142,3 +142,17 @@ img {
     align-content: flex-start;
     align-items: center;
   } */
+
+  * {
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+
+  nav {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  #nav a {
+      font-size: 34px;
+  }
