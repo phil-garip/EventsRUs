@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
 const router = require('express').Router();
 const { User, Event, Location } = require('../models');
+const { route } = require('./api');
 
 //LOGIN ROUTE
 router.get('/', (req, res) => {
@@ -73,7 +74,6 @@ router.get('/dashboard', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;
   
