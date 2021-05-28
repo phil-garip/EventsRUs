@@ -17,10 +17,16 @@
     </div>
   </div>
   </div>
-</div>
 
-  <script src="./controllers/home-routes.js"></script>
+    <div class= "valign center">
+      <h2>My Events</h2>
+      </div>
+      <section class="valign center">
 
 
-
+    {{#each events as |event|}}
+      {{> my-events event}}
+    {{/each}}
+    </section>
+  
   
