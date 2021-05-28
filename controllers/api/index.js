@@ -4,7 +4,6 @@ const eventRoutes = require('./eventDBroutes');
 
 
 router.use('/users', userRoutes);
-
 router.use('/events', eventRoutes)
 
 

@@ -28,24 +28,48 @@ router.get('/saved-events', (req, res) => {
 });
 
 //GET PROFILE PAGE
-router.get('/profile', (req, res) => {
-  Event.findAll({
-          include: [
-            { attributes: ['date', 'title', 'location'] },
-              {
-                  model: User,
-                  attributes: ['username']
-              }
-          ]
-      })
-      .then(dbEventData => {
-          const events = dbEventData.map(event => event.get({ plain: true }));
-          res.render('profile', { events });
-      })
-      .catch(err => {
-          console.log(err);
-          res.status(500).json(err);
-      });
+// router.get('/profile', (req, res) => {
+//   Event.findAll({
+//           include: [
+//             { attributes: ['date', 'title', 'location'] },
+//               {
+//                   model: User,
+//                   attributes: ['username']
+//               }
+//           ]
+//       })
+//       .then(dbEventData => {
+//           const events = dbEventData.map(event => event.get({ plain: true }));
+//           res.render('profile', { events });
+//       })
+//       .catch(err => {
+//           console.log(err);
+//           res.status(500).json(err);
+//       });
+// });
+
+router.get('/featured-events', async (req, res) => {
+  try {
+    const dbEventData = await Event.findAll({
+      include: [
+        {
+          model: Event,
+          attributes: 'title',
+        },
+      ],
+    });
+
+    const events = dbEventData.map((event) =>
+      event.get({ plain: true })
+    );
+    res.render('dashboard', {
+      events,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 
