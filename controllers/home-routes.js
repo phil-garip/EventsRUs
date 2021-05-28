@@ -8,6 +8,10 @@ router.get('/', (req, res) => {
   res.render('login');
 });
 
+router.get('/', (req, res) => {
+  res.render('logout');
+});
+
 //PROFILE CREATE ROUTE
 router.get('/profileCreate', (req,res) => {
   res.render('profileCreate');
