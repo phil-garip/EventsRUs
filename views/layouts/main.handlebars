@@ -16,18 +16,17 @@
 <body>
   <nav class = "deep-purple ">
     <div class="nav-wrapper">
-    <a href="/dashboard">Home |</a>
+    <a href="/dashboard"> Home |</a>
     <!-- If the user is logged in, show a logout button -->
-    {{#if loggedIn}}
-    <a href="/logout"> Logout |</a>
-    {{else}}
+   
     <!-- Otherwise, show a link to login -->
-    <a href="/"> Login |</a>
+   
    
      <a href="/profile"> Profile |</a>
      <a href="/eventCreate"> New Event</a>
-    {{/if}}
+    <a href="/logout">| Logout </a>
     
+    <object data="assets/confetti.svg" width="35" height="35" id="svg" class="right"></object>
   </nav> 
   
   <main>
