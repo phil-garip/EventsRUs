@@ -38,13 +38,13 @@ router.get('/profile', (req, res) => {
           where: {
             user_id: req.session.userId
           },
-          include: [
-            { 
-              // attributes: ['date', 'title', 'location'],
-              model: User,
-                  // attributes: ['username']
-            }
-          ]
+          // include: [
+          //   { 
+          //     // attributes: ['date', 'title', 'location'],
+          //     model: User,
+          //         // attributes: ['username']
+          //   }
+          // ]
       })
       .then(dbEventData => {
           const events = dbEventData.map(event => event.get({ plain: true }));
