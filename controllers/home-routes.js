@@ -49,7 +49,7 @@ router.get('/profile', (req, res) => {
       .then(dbEventData => {
           const events = dbEventData.map(event => event.get({ plain: true }));
           res.render('profile', { events });
-          res.json(events)
+          // res.json(events)
       })
       .catch(err => {
           console.log(err);
