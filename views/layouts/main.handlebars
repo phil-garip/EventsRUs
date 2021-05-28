@@ -19,13 +19,13 @@
     <a href="/dashboard">Home |</a>
     <!-- If the user is logged in, show a logout button -->
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout |</button>
+    <a href="/logout"> Logout |</a>
     {{else}}
     <!-- Otherwise, show a link to login -->
-    <a href="/">Login |</a>
+    <a href="/"> Login |</a>
    
-     <a href="/profile">Profile |</a>
-     <a href="/eventCreate">New Event</a>
+     <a href="/profile"> Profile |</a>
+     <a href="/eventCreate"> New Event</a>
     {{/if}}
     
   </nav> 
@@ -33,9 +33,9 @@
   <main>
       {{{body}}}
   </main>
-  {{#if loggedIn}}
+  {{!-- {{#if loggedIn}}
   <script src="/js/logout.js"></script>
-  {{/if}}
+  {{/if}} --}}
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
