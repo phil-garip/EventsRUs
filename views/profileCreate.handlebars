@@ -1,4 +1,4 @@
- <div class="row">
+ {{!-- <div class="row">
     <form class="col s12" id="newProfile-form">
       <div class="row">
         <div class="input-field col s6">
@@ -21,13 +21,57 @@
       </div>
        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
   </button>
-    </form>
+    </form> --}}
     {{!-- profile picture --}}
     
   {{!-- <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">Send</i>
   </button> --}}
-</div>
+{{!-- </div> --}}
 
+<div class="row valign-wrapper">
+    <div class="col s6 offset-s3 valign">
+      <div class="card deep-purple lighten-5">
+        <div class="card-content black-text">
+          <span class="card-title valign center">Create Account</span>
+          {{!-- username --}}
+          <div class="row">
+          <form class="col s12" id="newProfile-form">
+            <div class="row">
+              <div class="input-field col s12">
+                <input  id="username" type="text" class="validate">
+                <label for="username">Username</label>
+                </div>
+                </div>
+          {{!-- email --}}
+          <div class="row">
+          <form class="col s12" id="login-form">
+            <div class="row">
+              <div class="input-field col s12">
+                <input  id="email" type="text" class="validate">
+                <label for="email">Email</label>
+                </div>
+                </div>
+                {{!-- password --}}
+                <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              {{!-- button --}}
+              <div class="form-group valign center">
+                <button class="btn btn-primary deep-purple darken-3" type="submit">Submit</button>
+              </div>
+
+                </div>
+                </div>
+            </form>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
 
 <script src="/js/profileCreate.js"></script>
