@@ -8,6 +8,10 @@ router.get('/', (req, res) => {
   res.render('login');
 });
 
+router.get('/', (req, res) => {
+  res.render('logout');
+});
+
 //PROFILE CREATE ROUTE
 router.get('/profileCreate', (req,res) => {
   res.render('profileCreate');
@@ -38,18 +42,18 @@ router.get('/profile', (req, res) => {
           where: {
             user_id: req.session.userId
           },
-          include: [
-            { 
-              // attributes: ['date', 'title', 'location'],
-              model: User,
-                  // attributes: ['username']
-            }
-          ]
+          // include: [
+          //   { 
+          //     // attributes: ['date', 'title', 'location'],
+          //     model: User,
+          //         // attributes: ['username']
+          //   }
+          // ]
       })
       .then(dbEventData => {
           const events = dbEventData.map(event => event.get({ plain: true }));
           res.render('profile', { events });
-          res.json(events)
+          // res.json(events)
       })
       .catch(err => {
           console.log(err);
