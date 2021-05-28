@@ -20,10 +20,10 @@ Event.init(
       description: {
           type: DataTypes.TEXT,
         },
-      date: {
-          type: DataTypes.DATE
+      date_id: {
+          type: DataTypes.STRING,
       },
-      location: {
+      location_name: {
         type: DataTypes.STRING
       },
       user_id: {

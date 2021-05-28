@@ -1,20 +1,20 @@
 const loginFormHandler = async (event) => {
 
     event.preventDefault();
-
-    const title = document.querySelector('#event-title').value.trim();
-    console.log(title);
-    const description = document.querySelector('#description').value.trim();
-    const date = document.querySelector('#date');
-    const location = document.querySelector('#location');
+    const newEvent = { 
+      title: document.querySelector('#event-title').value.trim(),
+      description: document.querySelector('#description').value.trim(),
+      date_id: document.querySelector('#date').value.trim(),
+      location_name: document.querySelector('#location').value.trim() }
     // const email = document.querySelector('#email').value.trim();
     // const location = document.querySelector('#event-location').value.trim();
     // const time = document.querySelector('#event-time').value.trim();
     // const age = document.querySelector('.with-gap').value.trim();
     // if (email && title && location && time && age) {
+    console.log(newEvent);
       const response = await fetch('/api/events', {
         method: 'POST',
-        body: JSON.stringify({ title, description, date, location }),
+        body: JSON.stringify(newEvent),
         headers: { 'Content-Type': 'application/json' },
       });
   
