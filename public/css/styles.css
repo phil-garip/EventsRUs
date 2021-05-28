@@ -155,11 +155,29 @@ img {
   nav {
       padding-left: 15px;
       margin-right: 15px;
+      margin-bottom: 30px;
   }
 
   #nav a {
     margin-right: 10px; 
     font-size: large;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    
+  }
+  .centered {
+    position: absolute;
+    bottom: -29px;
+    opacity: .9;
+    
+    
+   
+
+
   }
 
   /* #ede7f6 deep-purple lighten-5 */
